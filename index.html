@@ -4,7 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coela's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+        <style>
+/* --- 全体のスタイル --- */
+        body {
+            background-color: #121212; /* ダークモードの背景色 */
+            color: #e0e0e0; /* 基本の文字色 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+            border-bottom: 2px solid #bb86fc; /* アクセントカラーの線 */
+            padding-bottom: 10px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+        
+        a {
+            color: #bb86fc; /* リンクの色 */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- ヘッダー --- */
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #b0b0b0;
+        }
+
+        /* --- スキルセクション --- */
+        .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); /* ← 135px に変更 */
+    gap: 15px;
+    margin-top: 20px;
+}
+        .skill-item {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        .skill-item h3 {
+            border-bottom: none;
+            margin: 0;
+            font-size: 1.1em;
+            color: #bb86fc;
+        }
+        .skill-item p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+            color: #b0b0b0;
+        }
+        
+        /* --- 成果物セクション --- */
+        .project-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .project-card h3 {
+            margin-top: 0;
+            border-bottom: none;
+            color: #ffffff;
+        }
+        .project-card .tags {
+            margin-top: 10px;
+        }
+        .project-card .tag {
+            background-color: #333;
+            color: #e0e0e0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        
+        /* --- 連絡先セクション --- */
+        .links ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .links li a {
+            font-size: 1.2em;
+        }
+        
+        /* --- フッター --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #888;
+            border-top: 1px solid #333;
+        }
+    </style>
 </head>
 <body>
 
@@ -80,7 +206,7 @@
                 <div class="links">
                     <ul>
                         <li><a href="https://github.com/sauhits" target="_blank">GitHub</a></li>
-                        <li><a href="https://x.com/hogehoge" target="_blank">X (旧Twitter)</a></li>
+                        <li><a href="https://x.com/huga_hoge1207" target="_blank">X (旧Twitter)</a></li>
                         <li><a href="https://qiita.com/sauhits" target="_blank">Qiita</a></li>
                     </ul>
                 </div>
