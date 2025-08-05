@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile - Portfolio</title>
+    <title>Coelaの外面</title>
     <!-- Tailwind CSSの読み込み -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts (Inter) の読み込み -->
@@ -33,12 +33,12 @@
         <header class="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-12">
             <div class="flex items-center mb-4 sm:mb-0">
                 <!-- アイコン -->
-                <img src="https://placehold.co/80x80/e2e8f0/334155?text=Icon" alt="User Icon"
+                <img src="https://pbs.twimg.com/profile_images/1940589351303266304/D-eN3cHV_400x400.jpg" alt="User Icon"
                     class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mr-4">
                 <div>
                     <!-- インターネットネーム -->
-                    <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">Your Name</h1>
-                    <p class="text-gray-500">Web Developer / Student</p>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">Coela (sauhits)</h1>
+                    <p class="text-gray-500">Student</p>
                 </div>
             </div>
             <!-- ナビゲーション -->
@@ -62,16 +62,16 @@
             <!-- 2. Portfolioセクション -->
             <section id="portfolio" class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
                 <h2 class="text-2xl font-bold mb-6 border-b pb-2">Portfolio</h2>
-                <div id="portfolio-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <ul id="portfolio-list" class="list-disc pl-6 space-y-6">
                     <!-- JavaScriptによってプロダクトがここに挿入されます -->
-                </div>
-            </section>
-        </main>
+    </div>
+    </section>
+    </main>
 
-        <!-- フッター -->
-        <footer class="text-center mt-12 text-gray-500">
-            <p>&copy; <span id="current-year"></span> Your Name. All Rights Reserved.</p>
-        </footer>
+    <!-- フッター -->
+    <footer class="text-center mt-12 text-gray-500">
+        <p>&copy; <span id="current-year"></span> Coela. All Rights Reserved.</p>
+    </footer>
     </div>
 
     <script>
@@ -79,29 +79,23 @@
         // ポートフォリオの情報をここに記述します
         const portfolioData = [
             {
-                title: "プロダクトA",
-                description: "これはプロダクトAの簡単な説明です。Webアプリケーションで、ユーザーのタスク管理を助けます。",
-                tags: ["React", "Node.js", "Firebase"],
-                link: "#" // プロダクトへのリンク
+                title: "二者対話の発話を対象としたBERTによる話題抽出と話題遷移の検知",
+                description: "二者対話の発話ログを用いて話題の抽出と話題遷移の検知を目指した．結果としてはおおむね発話の特徴を捉え，話題遷移を検出できていると考えられる．",
+                tags: ["python", "BERT"],
+                link: "https://github.com/sauhits/topick/blob/main/README.md" // プロダクトへのリンク
             },
             {
                 title: "プロダクトB",
-                description: "これはプロダクトBの簡単な説明です。Pythonを使ったデータ分析ツールです。",
-                tags: ["Python", "Pandas", "Matplotlib"],
+                description: "coming soon",
+                tags: ["Node.js", "JavaScript", "Firebase", "Google Cloud"],
                 link: "#"
             },
             {
                 title: "プロダクトC",
-                description: "これはプロダクトCの簡単な説明です。モバイルフレンドリーなポートフォリオサイトのテンプレートです。",
-                tags: ["HTML", "CSS", "JavaScript"],
+                description: "coming soon",
+                tags: ["Python", "C", "Discord API"],
                 link: "#"
             },
-            {
-                title: "プロダクトD",
-                description: "これはプロダクトDの簡単な説明です。機械学習を用いた画像認識の実験的なプロジェクトです。",
-                tags: ["Python", "TensorFlow", "OpenCV"],
-                link: "#"
-            }
         ];
 
         // --- DOM要素の取得 ---
@@ -111,23 +105,23 @@
          * ポートフォリオのリストをHTMLに描画する関数
          */
         function renderPortfolio() {
-            portfolioList.innerHTML = ''; // リストを初期化
+            portfolioList.innerHTML = '';
             portfolioData.forEach(item => {
                 const tagsHtml = item.tags.map(tag =>
                     `<span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">${tag}</span>`
                 ).join('');
 
                 const itemHtml = `
-                    <div class="border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow duration-300">
-                        <h3 class="text-xl font-bold mb-2">${item.title}</h3>
-                        <p class="text-gray-600 mb-4">${item.description}</p>
-                        <div class="mb-4">
+                    <li class="border-b border-gray-200 pb-4">
+                        <h3 class="text-lg font-bold mb-1">${item.title}</h3>
+                        <p class="text-gray-600 mb-2">${item.description}</p>
+                        <div class="mb-2">
                             ${tagsHtml}
                         </div>
                         <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline font-medium">
                             詳しく見る &rarr;
                         </a>
-                    </div>
+                    </li>
                 `;
                 portfolioList.innerHTML += itemHtml;
             });
