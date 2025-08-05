@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Portfolio</title>
+    <!-- Tailwind CSSの読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter) の読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Interフォントを適用 */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* アクティブなナビゲーションリンクのスタイル */
+        .nav-link.active {
+            color: #3b82f6;
+            /* blue-500 */
+            border-bottom: 2px solid #3b82f6;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto max-w-4xl p-4 sm:p-6 lg:p-8">
+        <!-- ヘッダー -->
+        <header class="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-12">
+            <div class="flex items-center mb-4 sm:mb-0">
+                <!-- アイコン -->
+                <img src="https://placehold.co/80x80/e2e8f0/334155?text=Icon" alt="User Icon"
+                    class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mr-4">
+                <div>
+                    <!-- インターネットネーム -->
+                    <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">Your Name</h1>
+                    <p class="text-gray-500">Web Developer / Student</p>
+                </div>
+            </div>
+            <!-- ナビゲーション -->
+            <nav>
+                <ul class="flex space-x-6 text-lg">
+                    <li><a href="./index.html"
+                            class="nav-link font-medium pb-1 transition-colors duration-300 hover:text-blue-500">Home</a>
+                    </li>
+                    <li><a href="./portfolio.html"
+                            class="nav-link active font-medium pb-1 transition-colors duration-300 hover:text-blue-500">Portfolio</a>
+                    </li>
+                    <li><a href="./links.html"
+                            class="nav-link font-medium pb-1 transition-colors duration-300 hover:text-blue-500">Links</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main>
+            <!-- 2. Portfolioセクション -->
+            <section id="portfolio" class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
+                <h2 class="text-2xl font-bold mb-6 border-b pb-2">Portfolio</h2>
+                <div id="portfolio-list" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- JavaScriptによってプロダクトがここに挿入されます -->
+                </div>
+            </section>
+        </main>
+
+        <!-- フッター -->
+        <footer class="text-center mt-12 text-gray-500">
+            <p>&copy; <span id="current-year"></span> Your Name. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- データの定義 ---
+        // ポートフォリオの情報をここに記述します
+        const portfolioData = [
+            {
+                title: "プロダクトA",
+                description: "これはプロダクトAの簡単な説明です。Webアプリケーションで、ユーザーのタスク管理を助けます。",
+                tags: ["React", "Node.js", "Firebase"],
+                link: "#" // プロダクトへのリンク
+            },
+            {
+                title: "プロダクトB",
+                description: "これはプロダクトBの簡単な説明です。Pythonを使ったデータ分析ツールです。",
+                tags: ["Python", "Pandas", "Matplotlib"],
+                link: "#"
+            },
+            {
+                title: "プロダクトC",
+                description: "これはプロダクトCの簡単な説明です。モバイルフレンドリーなポートフォリオサイトのテンプレートです。",
+                tags: ["HTML", "CSS", "JavaScript"],
+                link: "#"
+            },
+            {
+                title: "プロダクトD",
+                description: "これはプロダクトDの簡単な説明です。機械学習を用いた画像認識の実験的なプロジェクトです。",
+                tags: ["Python", "TensorFlow", "OpenCV"],
+                link: "#"
+            }
+        ];
+
+        // --- DOM要素の取得 ---
+        const portfolioList = document.getElementById('portfolio-list');
+
+        /**
+         * ポートフォリオのリストをHTMLに描画する関数
+         */
+        function renderPortfolio() {
+            portfolioList.innerHTML = ''; // リストを初期化
+            portfolioData.forEach(item => {
+                const tagsHtml = item.tags.map(tag =>
+                    `<span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">${tag}</span>`
+                ).join('');
+
+                const itemHtml = `
+                    <div class="border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow duration-300">
+                        <h3 class="text-xl font-bold mb-2">${item.title}</h3>
+                        <p class="text-gray-600 mb-4">${item.description}</p>
+                        <div class="mb-4">
+                            ${tagsHtml}
+                        </div>
+                        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline font-medium">
+                            詳しく見る &rarr;
+                        </a>
+                    </div>
+                `;
+                portfolioList.innerHTML += itemHtml;
+            });
+        }
+
+        // ページ読み込み時の処理
+        window.addEventListener('DOMContentLoaded', () => {
+            // ポートフォリオを描画
+            renderPortfolio();
+
+            // フッターの年を更新
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+
+</html>
