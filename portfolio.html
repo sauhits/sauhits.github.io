@@ -16,12 +16,45 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* アクティブなナビゲーションリンクのスタイル */
         .nav-link.active {
             color: #3b82f6;
-            /* blue-500 */
             border-bottom: 2px solid #3b82f6;
         }
+
+        /* --- ▼ここからアニメーション用CSSを追加 --- */
+        @keyframes slide-in {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-out {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        .page-enter {
+            animation: slide-in 0.4s ease-out forwards;
+        }
+
+        .page-exit {
+            animation: slide-out 0.4s ease-in forwards;
+        }
+
+        /* --- ▲ここまで追加 --- */
     </style>
 </head>
 
