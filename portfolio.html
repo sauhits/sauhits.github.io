@@ -4,111 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coelaの外面</title>
-    <!-- Tailwind CSSの読み込み -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts (Inter) の読み込み -->
+    <title>Coela's Dashboard - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .nav-link.active {
-            color: #3b82f6;
-            border-bottom: 2px solid #3b82f6;
-        }
-
-        /* --- ▼ここからアニメーション用CSSを追加 --- */
-        @keyframes slide-in {
-            from {
-                transform: translateX(-50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slide-out {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-
-            to {
-                transform: translateX(50px);
-                opacity: 0;
-            }
-        }
-
-        .page-enter {
-            animation: slide-in 0.4s ease-out forwards;
-        }
-
-        .page-exit {
-            animation: slide-out 0.4s ease-in forwards;
-        }
-
-        /* --- ▲ここまで追加 --- */
-    </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
-
-    <div class="container mx-auto max-w-4xl p-4 sm:p-6 lg:p-8">
-        <!-- ヘッダー -->
-        <header class="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-12">
-            <div class="flex items-center mb-4 sm:mb-0">
-                <!-- アイコン -->
-                <img src="https://pbs.twimg.com/profile_images/1940589351303266304/D-eN3cHV_400x400.jpg" alt="User Icon"
-                    class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mr-4">
-                <div>
-                    <!-- インターネットネーム -->
-                    <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">Coela (sauhits)</h1>
-                    <p class="text-gray-500">Student</p>
-                </div>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Coela DB</h2>
             </div>
-            <!-- ナビゲーション -->
-            <nav>
-                <ul class="flex space-x-6 text-lg">
-                    <li><a href="./index.html"
-                            class="nav-link font-medium pb-1 transition-colors duration-300 hover:text-blue-500">Home</a>
-                    </li>
-                    <li><a href="./portfolio.html"
-                            class="nav-link active font-medium pb-1 transition-colors duration-300 hover:text-blue-500">Portfolio</a>
-                    </li>
-                    <li><a href="./links.html"
-                            class="nav-link font-medium pb-1 transition-colors duration-300 hover:text-blue-500">Links</a>
-                    </li>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="./links.html">Links</a></li>
                 </ul>
             </nav>
-        </header>
+        </aside>
 
-        <!-- メインコンテンツ -->
-        <main>
-            <!-- 2. Portfolioセクション -->
-            <section id="portfolio" class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
-                <h2 class="text-2xl font-bold mb-6 border-b pb-2">Portfolio</h2>
-                <ul id="portfolio-list" class="list-disc pl-6 space-y-6">
-                    <!-- JavaScriptによってプロダクトがここに挿入されます -->
-    </div>
-    </section>
-    </main>
+        <div class="main-content">
+            <header class="main-header">
+                <div class="user-profile">
+                    <img src="https://pbs.twimg.com/profile_images/1940589351303266304/D-eN3cHV_400x400.jpg"
+                        alt="User Icon">
+                    <div>
+                        <h1>Coela (sauhits)</h1>
+                        <p>Student</p>
+                    </div>
+                </div>
+            </header>
 
-    <!-- フッター -->
-    <footer class="text-center mt-12 text-gray-500">
-        <p>&copy; <span id="current-year"></span> Coela. All Rights Reserved.</p>
-    </footer>
+            <main>
+                <section id="portfolio" class="content-card">
+                    <h2>// Portfolio</h2>
+                    <ul id="portfolio-list">
+                    </ul>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; <span id="current-year"></span> Coela. All Rights Reserved.</p>
+            </footer>
+        </div>
     </div>
 
     <script>
-        // --- データの定義 ---
-        // ポートフォリオの情報をここに記述します
         const portfolioData = [
             {
                 title: "二者対話の発話を対象としたBERTによる話題抽出と話題遷移の検知",
@@ -136,27 +80,21 @@
             },
         ];
 
-        // --- DOM要素の取得 ---
-        const portfolioList = document.getElementById('portfolio-list');
-
-        /**
-         * ポートフォリオのリストをHTMLに描画する関数
-         */
         function renderPortfolio() {
+            const portfolioList = document.getElementById('portfolio-list');
+            if (!portfolioList) return;
+
             portfolioList.innerHTML = '';
             portfolioData.forEach(item => {
-                const tagsHtml = item.tags.map(tag =>
-                    `<span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">${tag}</span>`
-                ).join('');
-
+                const tagsHtml = item.tags.map(tag => `<span>${tag}</span>`).join('');
                 const itemHtml = `
-                    <li class="border-b border-gray-200 pb-4">
-                        <h3 class="text-lg font-bold mb-1">${item.title}</h3>
-                        <p class="text-gray-600 mb-2">${item.description}</p>
-                        <div class="mb-2">
+                    <li>
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                        <div class="tags" style="margin-top: 0.75rem; margin-bottom: 0.75rem;">
                             ${tagsHtml}
                         </div>
-                        <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline font-medium">
+                        <a href="${item.link}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color);">
                             詳しく見る &rarr;
                         </a>
                     </li>
@@ -165,12 +103,8 @@
             });
         }
 
-        // ページ読み込み時の処理
         window.addEventListener('DOMContentLoaded', () => {
-            // ポートフォリオを描画
             renderPortfolio();
-
-            // フッターの年を更新
             document.getElementById('current-year').textContent = new Date().getFullYear();
         });
     </script>

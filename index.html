@@ -4,127 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coelaの外面</title>
-    <!-- Tailwind CSSの読み込み -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts (Inter) の読み込み -->
+    <title>Coela's Dashboard</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .nav-link.active {
-            color: #3b82f6;
-            border-bottom: 2px solid #3b82f6;
-        }
-
-        /* --- ▼ここからアニメーション用CSSを追加 --- */
-        @keyframes slide-in {
-            from {
-                transform: translateX(-50px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slide-out {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-
-            to {
-                transform: translateX(50px);
-                opacity: 0;
-            }
-        }
-
-        .page-enter {
-            animation: slide-in 0.4s ease-out forwards;
-        }
-
-        .page-exit {
-            animation: slide-out 0.4s ease-in forwards;
-        }
-
-        /* --- ▲ここまで追加 --- */
-    </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
-
-    <div class="container mx-auto max-w-4xl p-4 sm:p-6 lg:p-8">
-        <!-- ヘッダー -->
-        <header class="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-12">
-            <div class="flex items-center mb-4 sm:mb-0">
-                <!-- アイコン -->
-                <img src="https://pbs.twimg.com/profile_images/1940589351303266304/D-eN3cHV_400x400.jpg" alt="User Icon"
-                    class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mr-4">
-                <div>
-                    <!-- インターネットネーム -->
-                    <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">Coela (sauhits)</h1>
-                    <p class="text-gray-500">Student</p>
-                </div>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Coela DB</h2>
             </div>
-            <!-- ナビゲーション -->
-            <nav>
-                <ul class="flex space-x-6 text-lg">
-                    <li><a href="./index.html"
-                            class="nav-link active font-medium pb-1 transition-colors duration-300 hover:text-blue-500">Home</a>
-                    </li>
-                    <li><a href="./portfolio.html"
-                            class="nav-link font-medium pb-1 transition-colors duration-300 hover:text-blue-500">Portfolio</a>
-                    </li>
-                    <li><a href="./links.html"
-                            class="nav-link font-medium pb-1 transition-colors duration-300 hover:text-blue-500">Links</a>
-                    </li>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./index.html" class="active">Home</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="./links.html">Links</a></li>
                 </ul>
             </nav>
-        </header>
+        </aside>
 
-        <!-- メインコンテンツ -->
-        <main>
-            <!-- 1. Homeセクション -->
-            <section id="home" class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
-                <h2 class="text-2xl font-bold mb-6 border-b pb-2">About Me</h2>
-                <div class="space-y-4 text-gray-700">
-                    <p><strong class="font-medium text-gray-900 w-24 inline-block">生年:</strong> 2004年 12月</p>
-                    <p><strong class="font-medium text-gray-900 w-24 inline-block">所属:</strong> 静岡大学 情報学部</p>
-                    <p><strong class="font-medium text-gray-900 w-24 inline-block">専攻:</strong> 未定</p>
-                    <p><strong class="font-medium text-gray-900 w-24 inline-block">出身:</strong> 徳島県→愛知県→静岡県</p>
-                    <p><strong class="font-medium text-gray-900 w-24 inline-block">趣味:</strong> 読書、プログラミング、ギター</p>
+        <div class="main-content">
+            <header class="main-header">
+                <div class="user-profile">
+                    <img src="https://pbs.twimg.com/profile_images/1940589351303266304/D-eN3cHV_400x400.jpg"
+                        alt="User Icon">
+                    <div>
+                        <h1>Coela (sauhits)</h1>
+                        <p>Student</p>
+                    </div>
                 </div>
-                <div class="mt-8">
-                    <h3 class="text-xl font-bold mb-4">自己紹介</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        こんにちは！私はCoelaです．<br>
-                        専攻は未定ですが，通信・情報理論・符号理論・セキュリティ・人工知能に興味があります．
-                        趣味でプログラミングをしています．マイブームはギターです．
-                        どうぞよろしくお願いします！
-                    </p>
-                </div>
-            </section>
-        </main>
+            </header>
 
-        <!-- フッター -->
-        <footer class="text-center mt-12 text-gray-500">
-            <p>&copy; <span id="current-year"></span> Coela. All Rights Reserved.</p>
-        </footer>
+            <main>
+                <section id="home" class="content-card">
+                    <h2>// About Me</h2>
+                    <div class="about-grid">
+                        <p><strong>生年:</strong></p>
+                        <p>2004年 12月</p>
+                        <p><strong>所属:</strong></p>
+                        <p>静岡大学 情報学部</p>
+                        <p><strong>専攻:</strong></p>
+                        <p>未定</p>
+                        <p><strong>出身:</strong></p>
+                        <p>徳島県→愛知県→静岡県</p>
+                        <p><strong>趣味:</strong></p>
+                        <p>読書、プログラミング、ギター</p>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <h3>自己紹介</h3>
+                        <p>
+                            こんにちは！私はCoelaです．<br>
+                            専攻は未定ですが，通信・情報理論・符号理論・セキュリティ・人工知能に興味があります．<br>
+                            趣味でプログラミングをしています．マイブームはギターです．<br>
+                            どうぞよろしくお願いします！
+                        </p>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; <span id="current-year"></span> Coela. All Rights Reserved.</p>
+            </footer>
+        </div>
     </div>
 
     <script>
-        // ページ読み込み時の処理
-        window.addEventListener('DOMContentLoaded', () => {
-            // フッターの年を更新
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        });
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 

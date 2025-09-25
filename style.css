@@ -1,0 +1,267 @@
+/* style.css */
+
+/* --- グローバル変数と基本スタイル --- */
+:root {
+    --bg-color: #010409;
+    /* 背景色 (濃い紺) */
+    --primary-color: #212830;
+    /* カード・サイドバー背景色 */
+    --border-color: #30363d;
+    /* 境界線 */
+    --text-color: #c9d1d9;
+    /* 基本テキスト色 */
+    --heading-color: #f0f6fc;
+    /* 見出しテキスト色 */
+    --accent-color: #ff1b41;
+    /* ネオンレッドのアクセント */
+    --accent-hover: #238636;
+    /* アクセントのホバー色 */
+    --active-blue: #238636;
+    /* アクティブなリンクの青色 */
+    --font-mono: 'Menlo', 'Monaco', 'Courier New', monospace;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- ダッシュボードレイアウト --- */
+.dashboard-layout {
+    display: flex;
+}
+
+/* --- サイドバー --- */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: var(--primary-color);
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    /* サイドバーを固定 */
+    top: 0;
+    left: 0;
+}
+
+.sidebar-header {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-header h2 {
+    color: var(--heading-color);
+    font-family: var(--font-mono);
+    text-align: center;
+    margin: 0;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* --- ナビゲーション (サイドバー内) --- */
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+    background-color: var(--border-color);
+    color: var(--heading-color);
+}
+
+/* アクティブなリンクのスタイル */
+.sidebar-nav a.active {
+    background-color: var(--active-blue);
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* --- メインコンテンツエリア --- */
+.main-content {
+    margin-left: 250px;
+    /* サイドバーの幅だけ左にずらす */
+    width: calc(100% - 250px);
+    padding: 2rem 3rem;
+}
+
+/* --- メインエリアのヘッダー --- */
+.main-header {
+    display: flex;
+    justify-content: flex-end;
+    /* ユーザー情報を右に寄せる */
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    border: 2px solid var(--border-color);
+}
+
+.user-profile h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin: 0;
+}
+
+.user-profile p {
+    color: #8b949e;
+    font-family: var(--font-mono);
+}
+
+
+/* --- コンテンツカード --- */
+.content-card {
+    background-color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.content-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent-color);
+    font-family: var(--font-mono);
+}
+
+/* --- Homeセクション --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 0.75rem;
+}
+
+.about-grid strong {
+    font-weight: 500;
+    color: var(--heading-color);
+    font-family: var(--font-mono);
+}
+
+.about-grid p {
+    margin: 0;
+}
+
+#home h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Portfolioセクション --- */
+#portfolio-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#portfolio-list li {
+    padding: 1rem;
+    border-left: 3px solid var(--border-color);
+    transition: border-color 0.3s ease;
+}
+
+#portfolio-list li:hover {
+    border-left-color: var(--accent-color);
+}
+
+#portfolio-list h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin: 0 0 0.5rem;
+}
+
+.tags span {
+    background-color: rgba(255, 27, 65, 0.1);
+    color: var(--accent-color);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+    margin-right: 0.5rem;
+    display: inline-block;
+}
+
+/* --- Linksセクション --- */
+.link-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.link-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(255, 27, 65, 0.3);
+}
+
+.link-item svg {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    color: var(--heading-color);
+}
+
+.link-item span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--heading-color);
+}
+
+/* --- フッター --- */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: #8b949e;
+    font-family: var(--font-mono);
+}
