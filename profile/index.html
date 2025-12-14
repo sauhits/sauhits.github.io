@@ -9,19 +9,120 @@
 
 <body>
     <header>
-        <div>
-            <a href="">
-                <img src="./img/Coela_logo.png" alt="Coelaのロゴ">
-            </a>
-        </div>
-        <div>
-            <ul>
-                <li><a href="">home</a></li>
-                <li><a href="">制作物</a></li>
-                <li><a href="">contact</a></li>
-            </ul>
+        <div class="header_inner">
+            <div class="header_logo">
+                <a href="">
+                    <img class="logo" src="./img/Coela_logo.png" alt="Coelaのロゴ">
+                </a>
+            </div>
+            <div class="header_subtitle">
+                <p class="subtitle">
+                    This is a profile and portfolio site of Coela(sauhits), a Japanese men Student based in
+                    Hamamatsu.
+                </p>
+            </div>
+            <div class="header_menu">
+                <nav class="header_nav">
+                    <ul class="header_ul">
+                        <a href="">
+                            <li class="header_li">HOME</li>
+                        </a>
+                        <a href="">
+                            <li class="header_li">PROFILE</li>
+                        </a>
+                        <a href="">
+                            <li class="header_li">制作物</li>
+                        </a>
+                        <a href="">
+                            <li class="header_li">CONTACT</li>
+                        </a>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
+
+    <main id="top">
+        <div class="main_inner">
+            <!-- portfolio -->
+            <div class="portfolio_parent">
+                <div class="portfolio_child">
+                    <div class="portfolio_grandc">
+                        <a href="">
+                            <img src="./img/haizoku.png" alt="2025年度学科研究室配属システムの画像">
+                            <div class="card_content">
+                                <h3 class="card_title">2025年度学科研究室配属システム</h3>
+                                <p class="cart_excerpt">
+                                    静岡大学情報学部情報科学科の3年生を対象とした2025年度の研究室配属システムを作成・運営しました．
+                                    対象学生は96名です．
+                                    技術スタックはNode.js,Firebaseです．
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="portfolio_grandc">
+                        <a href="">
+                            <img src="./img/disco_kadai.png" alt="discord botの画像">
+                            <div class="card_content">
+                                <h3 class="card_title">課題自動管理bot</h3>
+                                <p class="cart_excerpt">DiscordBotを用いた課題締め切り管理botです．
+                                    課題は静岡大学ポータルサイトとMSTeamsから自動で取得されます．
+                                    技術スタックはPython.c言語,Discord.pyです．
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <p class="and_more">
+                    <a href="">and more →</a>
+                </p>
+            </div>
+            <hr>
+            <!-- profile -->
+            <div class="profile_inner">
+                <div class="profile_card">
+                    <img src="./img/oct_icon.jpg" alt="プロフィール画像">
+                    <a href="">
+                        <div class="profile_text">
+                            <h2>Coela(sauhits)〈シーラ〉</h2>
+                            静岡県在住の大学生．<br>
+                            Python.Java,c言語等を中心にweb開発を行っている．<br>
+                            趣味はギターとYoutube鑑賞，主にGuianoや十明が好き．<br>
+                            最近は部屋の片づけに夢中．<br>
+                            今年こそは流行り病にかからないようにしたい．
+                            <div class="and_more" style="text-align: right;">
+                                PROFILE & MORE →
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <hr>
+            <!-- footer -->
+            <footer>
+                <div class="footer_inner">
+                    <div class="footer_logo">
+                        <img src="./img/Coela_logo.png" alt="Coelaのロゴ">
+                    </div>
+                    <div class="footer_credits">
+                        <p class="credits_text">
+                            © 2026 Coela All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </footer>
+            <hr>
+            <a href="#top">
+                <div class="top_nav_text">
+                    <p>TOPへ戻る ↑</p>
+                </div>
+            </a>
+        </div>
+    </main>
 </body>
 
 </html>
