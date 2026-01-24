@@ -221,6 +221,7 @@ main {
 }
 
 .footer-right {
+    margin-left: 390px;
     position: absolute;
     bottom: 0;
 }
