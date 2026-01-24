@@ -23,7 +23,9 @@ li {
 
 body {
     background-color: rgb(243, 243, 243);
-    padding: 0 0 50px 0;
+    padding: 30px 0 50px 0;
+    position: relative;
+    min-height: 90vh;
 }
 
 main {
@@ -216,4 +218,14 @@ main {
     width: 570px;
     font-size: 14pt;
     padding-right: 50px;
+}
+
+.footer-right {
+    position: absolute;
+    bottom: 0;
+}
+
+.footer-right-text {
+    font-weight: bold;
+    font-size: 12pt;
 }
