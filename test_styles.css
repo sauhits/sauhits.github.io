@@ -54,7 +54,9 @@ main {
     border-radius: 50%;
 }
 
-.account-name {}
+.account-name {
+    font-size: 20pt;
+}
 
 .account-mail {}
 
@@ -62,11 +64,12 @@ main {
     width: 100%;
     padding: 10px 15px;
     font-weight: bold;
+    margin: auto 0px;
 }
 
 .menu {}
 
-.menu li{
+.menu li {
     display: flex;
 }
 
@@ -74,7 +77,7 @@ main {
     height: 28px;
 }
 
-.menu li p{
+.menu li p {
     padding-left: 10px;
 }
 
@@ -128,7 +131,8 @@ main {
     width: 900px;
 }
 
-.content-icon-text img{
+.content-icon-text img {
+    color: black;
     padding: 0;
     margin: 0;
     width: 30px;
@@ -154,9 +158,24 @@ main {
     width: 30px;
 }
 
+.profile {
+    display: flex;
+    padding: 10px 10px 20px 10px;
+}
+
 .profile img {
     width: 150px;
     border-radius: 50%;
+}
+
+.profile-text {
+    margin: auto 30px;
+}
+
+.profile-name {
+    font-size: 20pt;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .bar {
