@@ -1,0 +1,68 @@
+[
+  {
+    "id": 0,
+    "title": "zenjo",
+    "subtitle": "大学ポータルサイト向けのweb拡張機能",
+    "tech": "JavaScript,HTML,CSS,GitHub",
+    "status": "開発中",
+    "description": "大学ポータルサイトとして利用されているLiveCampusU向けの拡張機能です．\n各種ログインの自動化を主機能として持ち，ダークモードの提供も行っています．一部対応外の要素もありますが順次対応しています．",
+    "github": "https://github.com/sauhits/zenjo_clicker",
+    "qiita": "https://qiita.com/sauhits/items/fa94cf686d59cc01c7b0",
+    "out": null
+  },
+  {
+    "id": 1,
+    "title": "学科研究室配属システム",
+    "subtitle": "2025年度静岡大学情報学部情報科学科 研究室配属システムの新規開発・運用",
+    "tech": "Node.js,GCP Firebase/Firestore(NoSQL),GitHub/Actions",
+    "status": "運用終了",
+    "description": "2025年度静岡大学情報学部情報科学科 研究室配属システムの新規開発を行いました．結果としては学務より採用され，対象学生全員の配属を担当し，完了することができました．\n\nchrome拡張機能を用いたクライアントサーバシステムとして実装しました．これによって歴代システムでは不可能であった個人ページからの成績スクレイピングを可能にしました．\n\nユーザ：学科学生96名\n開発期間：1ヶ月\n開発体制：1名\n",
+    "github": "https://github.com/sauhits/lab_entry_system",
+    "qiita": "https://qiita.com/sauhits/items/a9a9a6802d124be8bde2",
+    "out": null
+  },
+  {
+    "id": 2,
+    "title": "NeverBash",
+    "subtitle": "タイプミスしたコマンドのまとめサイトを作成するスクリプト",
+    "tech": "Python,HTML,wsl2",
+    "status": "開発終了",
+    "description": "ターミナルでのタイプミスは日常茶飯事です．タイプミスをしたコマンド名でもそれらしいものができることがありますよね．このスクリプトではタイプミスの結果，生まれた架空のコマンドについてまとめたサイトを生成します．",
+    "github": "https://github.com/sauhits/never_bash",
+    "qiita": null,
+    "out": null
+  },
+  {
+    "id": 3,
+    "title": "二者対話の発話を対象としたBERTによる話題抽出と話題遷移の検出",
+    "subtitle": "会話内の話題抽出と話題遷移の検出",
+    "tech": "Python,BERT,自然言語処理",
+    "status": "開発終了",
+    "description": "二者対話の発話ログを用いて話題の抽出と話題遷移の検知を目指した．\n結果として発話の特徴を捉えることに成功し，話題遷移の検出もおおむね成功した．\nまた，モデルの作成に静岡大学狩野研究室のGPUをお借りしました．ありがとうございます．",
+    "github": "https://github.com/sauhits/topick",
+    "qiita": null,
+    "out": null
+  },
+  {
+    "id": 4,
+    "title": "Calender API",
+    "subtitle": "カレンダー画像を生成するAPI",
+    "tech": "Python,FastAPI,GitHub",
+    "status": "運用中",
+    "description": "指定した年,月を元に月カレンダーを作成し，予定を書き込んで画像として返すAPIです．\n予定はJSON形式で渡すことができます．",
+    "github": "https://github.com/sauhits/makeCalender",
+    "qiita": null,
+    "out": null
+  },
+  {
+    "id": 5,
+    "title": "LINEリマインダー",
+    "subtitle": "LINEをインターフェースに持つリマインダーシステム",
+    "tech": "Python,FastAPI,LINE Developers,GitHub,\nGoogle-CloudRun/Firestore/CloudScheduler",
+    "status": "運用中",
+    "description": "LINEを通じて予定の管理をするシステムです．CloudRun上でFastAPIによるAPIを構築し，Firestoreにてリマインドの管理をしています．\n最大で30秒の誤差を持ちますが，200通/月までサービスを提供します．",
+    "github": "https://github.com/sauhits/remind-er",
+    "qiita": "https://qiita.com/sauhits/items/e7c421b828de397b54d5",
+    "out": null
+  }
+]

@@ -230,3 +230,29 @@ main {
     font-weight: bold;
     font-size: 12pt;
 }
+
+.external-li {
+    display: flex;
+}
+
+.external-li img {
+    width: 25px;
+    height: 25px;
+    margin: auto 10px;
+}
+
+.external-li p {
+    padding-left: 10px;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: auto auto;
+    color: rgb(0, 110, 201);
+}
+
+.insert_details {
+    white-space: pre-wrap;
+}
+
+.insert_tech-stack{
+    white-space: pre-wrap;
+}
