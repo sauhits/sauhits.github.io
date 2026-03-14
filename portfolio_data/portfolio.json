@@ -64,5 +64,27 @@
     "github": "https://github.com/sauhits/remind-er",
     "qiita": "https://qiita.com/sauhits/items/e7c421b828de397b54d5",
     "out": null
+  },
+  {
+    "id": 6,
+    "title": "Discord Bot",
+    "subtitle": "所属研究室の連絡用DiscordサーバのBot",
+    "tech": "Java,DiscordJDA",
+    "status": "開発中",
+    "description": "所属研究室の連絡用DiscordサーバのBotです．",
+    "github": null,
+    "qiita": null,
+    "out": null
+  },
+  {
+    "id": 7,
+    "title": "C言語コンパイラ",
+    "subtitle": "SEP-3を対象としたC言語コンパイラ",
+    "tech": "Java,maven",
+    "status": "開発終了",
+    "description": "大学の講義にて作成したC言語コンパイラです．\n静岡大学の独自アーキテクチャであるSEP-3を対象としてC言語のプログラムをアセンブリ言語に変換します．",
+    "github": null,
+    "qiita": null,
+    "out": null
   }
 ]
