@@ -8,87 +8,90 @@
 
 <body>
     <header>
-        <div>
+        <div id="header-title">
             <p>カレンダー作成サイト</p>
+        </div>
+        <div id="header-description">
+            <p>予定を書き込んだカレンダー画像を作成するサイトです</p>
         </div>
     </header>
     <main>
-        <div>
-            <p>予定を書き込んだカレンダー画像を作成するサイトです</p>
-        </div>
-        <form id="calendar-form">
-            <table>
-                <tr>
-                    <td>
-                        <label for="year">年月の指定:</label>
-                    </td>
-                    <td>
-                        <input type="month" id="year">
-                    </td>
-                    <td>
-                        <input type="submit" value="カレンダー画像を作成">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="task">予定:</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <select name="date[]" id="date">
-                            <option value="needSelect" selected>選択してください</option>
-                            <option value=1>1日</option>
-                            <option value=2>2日</option>
-                            <option value=3>3日</option>
-                            <option value=4>4日</option>
-                            <option value=5>5日</option>
-                            <option value=6>6日</option>
-                            <option value=7>7日</option>
-                            <option value=8>8日</option>
-                            <option value=9>9日</option>
-                            <option value=10>10日</option>
-                            <option value=11>11日</option>
-                            <option value=12>12日</option>
-                            <option value=13>13日</option>
-                            <option value=14>14日</option>
-                            <option value=15>15日</option>
-                            <option value=16>16日</option>
-                            <option value=17>17日</option>
-                            <option value=18>18日</option>
-                            <option value=19>19日</option>
-                            <option value=20>20日</option>
-                            <option value=21>21日</option>
-                            <option value=22>22日</option>
-                            <option value=23>23日</option>
-                            <option value=24>24日</option>
-                            <option value=25>25日</option>
-                            <option value=26>26日</option>
-                            <option value=27>27日</option>
-                            <option value=28>28日</option>
-                            <option value=29>29日</option>
-                            <option value=30>30日</option>
-                            <option value=31>31日</option>
-                        </select>
-                    </td>
-                    <td>
-                        <input type="text" id="task[]" name="task[]" placeholder="タイトル(7文字以内)">
-                    </td>
-                    <td>
-                        <input type="text" id="description[]" name="description[]" placeholder="内容(20文字以内)">
-                    </td>
-                </tr>
-                <tr id="button-row">
-                    <td>
-                        <input type="button" value="予定を追加" onclick="addTask()">
-                    </td>
-                </tr>
-            </table>
-        </form>
-        <div id="imageContainer" style="margin-top: 20px;">
-            <img id="resultImage" style="display: none; max-width: 300px; border: 1px solid #ccc;" alt="APIからの取得画像">
+        <div id="form-container">
+            <form id="calendar-form">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="year">年月の指定:</label>
+                        </td>
+                        <td>
+                            <input type="month" id="year" name="year">
+                        </td>
+                        <td>
+                            <input type="submit" value="カレンダー画像を作成">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="task">予定:</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="date[]" id="date">
+                                <option value="needSelect" selected>選択してください</option>
+                                <option value=1>1日</option>
+                                <option value=2>2日</option>
+                                <option value=3>3日</option>
+                                <option value=4>4日</option>
+                                <option value=5>5日</option>
+                                <option value=6>6日</option>
+                                <option value=7>7日</option>
+                                <option value=8>8日</option>
+                                <option value=9>9日</option>
+                                <option value=10>10日</option>
+                                <option value=11>11日</option>
+                                <option value=12>12日</option>
+                                <option value=13>13日</option>
+                                <option value=14>14日</option>
+                                <option value=15>15日</option>
+                                <option value=16>16日</option>
+                                <option value=17>17日</option>
+                                <option value=18>18日</option>
+                                <option value=19>19日</option>
+                                <option value=20>20日</option>
+                                <option value=21>21日</option>
+                                <option value=22>22日</option>
+                                <option value=23>23日</option>
+                                <option value=24>24日</option>
+                                <option value=25>25日</option>
+                                <option value=26>26日</option>
+                                <option value=27>27日</option>
+                                <option value=28>28日</option>
+                                <option value=29>29日</option>
+                                <option value=30>30日</option>
+                                <option value=31>31日</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" id="task[]" name="task[]" placeholder="タイトル(7文字以内)">
+                        </td>
+                        <td>
+                            <input type="text" id="description[]" name="description[]" placeholder="内容(20文字以内)">
+                        </td>
+                    </tr>
+                    <tr id="button-row">
+                        <td>
+                            <input type="button" value="予定を追加" onclick="addTask()">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <div id="imageContainer" style="margin-top: 20px;">
+                <img id="resultImage" style="display: none; max-width: 300px; border: 1px solid #ccc;" alt="APIからの取得画像">
+            </div>
         </div>
     </main>
+
     <footer>
         <div class="footer-right">
             <p class="footer-right-text">

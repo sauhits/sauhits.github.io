@@ -56,7 +56,7 @@ document
     const [yearStr, monthStr] = yearMonthStr.split("-");
     const yearNum = yearStr ? parseInt(yearStr, 10) : 0;
     const monthNum = monthStr ? parseInt(monthStr, 10) : 0;
-    const dates=formData.getAll("date[]");
+    const dates = formData.getAll("date[]");
     const titles = formData.getAll("task[]");
     const descriptions = formData.getAll("description[]");
     const tasks = [];
@@ -69,23 +69,22 @@ document
       });
     }
 
-    // 4. 最終的なオブジェクトを作成
     const requestData = {
       year: yearNum,
       month: monthNum,
       tasks: tasks,
     };
 
-    // 5. 通信用のJSON文字列に変換
     const jsonBody = JSON.stringify(requestData);
-    const apiUrl="https://calendar-api-service-406088920323.asia-northeast1.run.app/calender"
+    const apiUrl =
+      "https://calendar-api-service-406088920323.asia-northeast1.run.app/calender";
 
     try {
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer Nadvqnr4cou7rA3PlW/JAw==`,
+          Authorization: `Nadvqnr4cou7rA3PlW/JAw==`,
         },
         body: jsonBody,
       });
