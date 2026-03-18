@@ -61,20 +61,22 @@ document
     const descriptions = formData.getAll("description[]");
     const tasks = [];
 
-    for (let i = 0; i < titles.length; i++) {
-      tasks.push({
-        day: Number(dates[i]),
-        title: titles[i] || "",
-        description: descriptions[i] || "",
-      });
-    }
-    if (tasks.length === 0) {
+    if (titles[0] === "") {
       tasks.push({
         day: 1,
         title: "",
         description: "今月も頑張りましょう！！",
       });
+    } else {
+      for (let i = 0; i < titles.length; i++) {
+        tasks.push({
+          day: Number(dates[i]),
+          title: titles[i] || "",
+          description: descriptions[i] || "",
+        });
+      }
     }
+
     console.log("task:", tasks);
 
     const requestData = {
