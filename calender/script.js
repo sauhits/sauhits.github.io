@@ -68,12 +68,15 @@ document
         description: descriptions[i] || "",
       });
     }
+    console.log("task:",tasks);
 
     const requestData = {
       year: Number(yearNum),
       month: Number(monthNum),
       tasks: tasks,
     };
+    console.log("送信するデータ:", requestData);
+
 
     const jsonBody = JSON.stringify(requestData);
     const apiUrl =
@@ -84,8 +87,8 @@ document
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Nadvqnr4cou7rA3PlW/JAw==",
-          accept: "application/json",
+          "Authorization": "Nadvqnr4cou7rA3PlW/JAw==",
+          "accept": "application/json",
         },
         body: jsonBody,
       });
