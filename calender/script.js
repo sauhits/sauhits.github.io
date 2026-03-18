@@ -63,15 +63,15 @@ document
 
     for (let i = 0; i < titles.length; i++) {
       tasks.push({
-        day: dates[i] || "",
+        day: Number(dates[i]),
         title: titles[i] || "",
         description: descriptions[i] || "",
       });
     }
 
     const requestData = {
-      year: yearNum,
-      month: monthNum,
+      year: Number(yearNum),
+      month: Number(monthNum),
       tasks: tasks,
     };
 
@@ -84,8 +84,8 @@ document
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Nadvqnr4cou7rA3PlW/JAw==",
-          "accept": "application/json",
+          Authorization: "Nadvqnr4cou7rA3PlW/JAw==",
+          accept: "application/json",
         },
         body: jsonBody,
       });
