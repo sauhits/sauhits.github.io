@@ -68,7 +68,14 @@ document
         description: descriptions[i] || "",
       });
     }
-    console.log("task:",tasks);
+    if (tasks.length === 0) {
+      tasks.push({
+        day: 1,
+        title: "",
+        description: "今月も頑張りましょう！！",
+      });
+    }
+    console.log("task:", tasks);
 
     const requestData = {
       year: Number(yearNum),
@@ -76,7 +83,6 @@ document
       tasks: tasks,
     };
     console.log("送信するデータ:", requestData);
-
 
     const jsonBody = JSON.stringify(requestData);
     const apiUrl =
@@ -87,8 +93,8 @@ document
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Nadvqnr4cou7rA3PlW/JAw==",
-          "accept": "application/json",
+          Authorization: "Nadvqnr4cou7rA3PlW/JAw==",
+          accept: "application/json",
         },
         body: jsonBody,
       });
