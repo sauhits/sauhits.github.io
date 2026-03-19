@@ -50,15 +50,15 @@ function deleteTask(buttonElement) {
 document
   .getElementById("calendar-form")
   .addEventListener("submit", async function (event) {
-    const formData = new FormData(this);
+    const formData = new FormData(this)
+      .then((dates) => formData.getAll("date[]"))
+      .then((titles) => formData.getAll("task[]"))
+      .then((descriptions) => formData.getAll("description[]"));
     event.preventDefault();
     const yearMonthStr = formData.get("year") || "";
     const [yearStr, monthStr] = yearMonthStr.split("-");
     const yearNum = yearStr ? parseInt(yearStr, 10) : 0;
     const monthNum = monthStr ? parseInt(monthStr, 10) : 0;
-    const dates = formData.getAll("date[]");
-    const titles = formData.getAll("task[]");
-    const descriptions = formData.getAll("description[]");
     const tasks = [];
 
     if (titles[0] === "") {
@@ -84,7 +84,6 @@ document
       month: Number(monthNum),
       tasks: tasks,
     };
-    console.log("送信するデータ:", requestData);
 
     const jsonBody = JSON.stringify(requestData);
     const apiUrl =
@@ -104,15 +103,12 @@ document
         throw new Error("APIの呼び出しに失敗しました");
       }
 
-      const blob = await response.blob();
-      const reader = new FileReader();
-      reader.onloadend = function () {
-        const base64data = reader.result;
-        const imgElement = document.getElementById("resultImage");
-        imgElement.src = base64data;
-        imgElement.style.display = "block";
-      };
-      reader.readAsDataURL(blob);
+      const responseBodyJson = await response.json().then((imgBase64) => {
+        responseBodyJson.base64;
+        const resultImg = document.getElementById("resultImage");
+        resultImg.src = `data:image/png;base64,${imgBase64}`;
+        resultImg.style.display = "block";
+      });
     } catch (error) {
       console.error("エラー:", error);
       alert("画像の取得に失敗しました。");
