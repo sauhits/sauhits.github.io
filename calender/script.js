@@ -50,15 +50,15 @@ function deleteTask(buttonElement) {
 document
   .getElementById("calendar-form")
   .addEventListener("submit", async function (event) {
-    const formData = new FormData(this)
-      .then((dates) => formData.getAll("date[]"))
-      .then((titles) => formData.getAll("task[]"))
-      .then((descriptions) => formData.getAll("description[]"));
+    const formData = new FormData(this);
     event.preventDefault();
     const yearMonthStr = formData.get("year") || "";
     const [yearStr, monthStr] = yearMonthStr.split("-");
     const yearNum = yearStr ? parseInt(yearStr, 10) : 0;
     const monthNum = monthStr ? parseInt(monthStr, 10) : 0;
+    const dates = formData.getAll("date[]");
+    const titles = formData.getAll("task[]");
+    const descriptions = formData.getAll("description[]");
     const tasks = [];
 
     if (titles[0] === "") {
@@ -76,8 +76,6 @@ document
         });
       }
     }
-
-    console.log("task:", tasks);
 
     const requestData = {
       year: Number(yearNum),
@@ -103,12 +101,16 @@ document
         throw new Error("APIの呼び出しに失敗しました");
       }
 
-      const responseBodyJson = await response.json().then((imgBase64) => {
-        responseBodyJson.base64;
-        const resultImg = document.getElementById("resultImage");
-        resultImg.src = `data:image/png;base64,${imgBase64}`;
-        resultImg.style.display = "block";
-      });
+      response
+        .json()
+        .then((data) => {
+          return "data:image/png;base64," + data.image;
+        })
+        .then((imgUrl) => {
+          const resultImage = document.getElementById("resultImage");
+          resultImage.src = imgUrl;
+          resultImage.style.display = "block";
+        });
     } catch (error) {
       console.error("エラー:", error);
       alert("画像の取得に失敗しました。");
