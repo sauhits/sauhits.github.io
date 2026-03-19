@@ -103,11 +103,9 @@ document
 
       response
         .json()
-        .then((data)=>{
-          return JSON.parse(data);
-        })
         .then((data) => {
-          return "data:image/png;base64," + data.base64;
+          console.log(data);
+          return "data:image/png;base64," + data[0].base64;
         })
         .then((imgUrl) => {
           const resultImage = document.getElementById("resultImage");
