@@ -104,7 +104,7 @@ document
       response
         .json()
         .then((data) => {
-          return "data:image/png;base64," + data.image;
+          return "data:image/png;base64," + data.base64;
         })
         .then((imgUrl) => {
           const resultImage = document.getElementById("resultImage");
