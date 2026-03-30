@@ -34,9 +34,9 @@ function addTask() {
             <option value="thirty">30日</option>
             <option value="thirtyone">31日</option>
         </select></td>
-        <td><input type="text" id="task[]" placeholder="タイトル(7文字以内)"></td>
-        <td><input type="text" id="description[]" placeholder="内容(20文字以内)"></td>
-        <td><input type="button" value="削除" onclick="deleteTask(this)"></td>
+        <td><input type="text" id="task[]" class="task-input" placeholder="タイトル(7文字以内)"></td>
+        <td><input type="text" id="description[]" class="description-input" placeholder="内容(20文字以内)"></td>
+        <td><input type="button" value="削除" class="delete-btn" onclick="deleteTask(this)"></td>
         </tr>`;
   const buttonRow = document.getElementById("button-row");
   buttonRow.insertAdjacentHTML("beforebegin", newRowHTML);

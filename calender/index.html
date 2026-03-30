@@ -9,10 +9,10 @@
 <body>
     <header>
         <div id="header-title">
-            <p>カレンダー作成サイト</p>
+            カレンダー作成サイト
         </div>
         <div id="header-description">
-            <p>予定を書き込んだカレンダー画像を作成するサイトです</p>
+            予定を書き込んだカレンダー画像を作成するサイトです
         </div>
     </header>
 
@@ -22,18 +22,15 @@
                 <table>
                     <tr>
                         <td>
-                            <label for="year">年月の指定:</label>
+                            <label for="year-input" id="year-label">年月の指定:</label>
                         </td>
                         <td>
-                            <input type="month" id="year" name="year">
-                        </td>
-                        <td>
-                            <input type="submit" value="カレンダー画像を作成">
+                            <input type="month" id="year-input" name="year">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="task">予定:</label>
+                            <label for="task[]" id="task-label">予定:</label>
                         </td>
                     </tr>
                     <tr>
@@ -74,21 +71,26 @@
                             </select>
                         </td>
                         <td>
-                            <input type="text" id="task[]" name="task[]" placeholder="タイトル(7文字以内)">
+                            <input type="text" id="task[]" name="task[]" class="task-input" placeholder="タイトル(7文字以内)">
                         </td>
                         <td>
-                            <input type="text" id="description[]" name="description[]" placeholder="内容(20文字以内)">
+                            <input type="text" id="description[]" name="description[]" class="description-input"
+                                placeholder="内容(20文字以内)">
+                        </td>
+                        <td>
+                            <input type="button" value="削除" class="delete-btn">
                         </td>
                     </tr>
                     <tr id="button-row">
                         <td>
-                            <input type="button" value="予定を追加" onclick="addTask()">
+                            <input type="button" id="add-task-btn" value="予定を追加" onclick="addTask()">
                         </td>
                     </tr>
                 </table>
+                <input type="submit" id="submit-btn" value="カレンダー画像を作成">
             </form>
             <div id="imageContainer" style="margin-top: 20px;">
-                <img id="resultImage" style="display: none; max-width: 300px; border: 1px solid #ccc;" alt="APIからの取得画像">
+                <img id="resultImage" alt="カレンダー画像">
             </div>
         </div>
     </main>

@@ -1,0 +1,74 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    margin-left: 15px;
+}
+
+/* 画面サイズが1000px以上のときに画像を並べたい */
+main {
+    margin-top: 30px;
+}
+
+table {
+    border: 1px solid black;
+    padding: 15px;
+    width: 575px;
+}
+
+#header-title {
+    font-size: 20pt;
+    margin-top: 15px;
+}
+
+#header-description {}
+
+#form-container {}
+
+@media(min-width:1000px) {
+    #form-container {
+        display: flex;
+    }
+}
+
+#calendar-form {}
+
+#year-label {}
+
+#year-input {
+    width: 177px;
+    height: 30px;
+}
+
+#submit-btn {}
+
+#date {
+    height: 30px;
+}
+
+#task-label {}
+
+.task-input {
+    height: 30px;
+}
+
+.description-input {
+    height: 30px;
+}
+
+.delete-btn {
+    height: 30px;
+}
+
+#button-row {}
+
+#add-task-btn {}
+
+#imageContainer {}
+
+#resultImage {
+    display: none;
+}
+
+.footer-right {}
+
+.footer-right-text {}

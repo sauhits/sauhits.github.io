@@ -43,17 +43,17 @@ function renderPage(data) {
   if (data.github == null) {
     document.getElementsByClassName("insert_github")[0].style.display = "none";
   } else {
-    document.getElementsByClassName("insert_github")[0].href = data.github;
+    document.getElementsByClassName("insert_github")[0].setAttribute("href", data.github);
   }
   if (data.qiita == null) {
     document.getElementsByClassName("insert_qiita")[0].style.display = "none";
   } else {
-    document.getElementsByClassName("insert_qiita")[0].href = data.qiita;
+    document.getElementsByClassName("insert_qiita")[0].setAttribute("href", data.qiita);
   }
   if (data.out == null) {
     document.getElementsByClassName("insert_external")[0].style.display =
       "none";
   } else {
-    document.getElementsByClassName("insert_external")[0].href = data.out;
+    document.getElementsByClassName("insert_external")[0].setAttribute("href", data.out);
   }
 }
