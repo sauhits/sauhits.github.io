@@ -13,13 +13,13 @@ const List = [
     title: "Career",
     description: "資格，経歴",
   },
-  {
-    toLink: "#tech",
-    imgLink: "../img/tech.svg",
-    imgAlt: "",
-    title: "Tech",
-    description: "技術スタック，スキル",
-  },
+  // {
+  //   toLink: "#tech",
+  //   imgLink: "../img/tech.svg",
+  //   imgAlt: "",
+  //   title: "Tech",
+  //   description: "技術スタック，スキル",
+  // },
 ];
 
 const Container = document.getElementById("about-content-container");

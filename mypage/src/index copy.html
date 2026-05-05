@@ -12,6 +12,8 @@
     <script type="module" src="./js/profile.js" defer></script>
     <script type="module" src="./js/portfolio.js" defer></script>
     <script type="module" src="./js/contact.js" defer></script>
+    <script type="module" src="./js/career.js" defer></script>
+    <script type="module" src="./js/portfolio_detail.js" defer></script>
 </head>
 
 <body>
@@ -88,6 +90,24 @@
         </div>
     </template>
 
+    <template id="content-template-6">
+        <div class="content-icon-text">
+            <div class="content-text">
+                <p class="content-title insert_title"></p>
+                <p class="content-description insert_subtitle"></p>
+            </div>
+        </div>
+    </template>
+
+    <template id="content-template-7">
+    <li class="external-li">
+        <img class="external-img" src="" alt="">
+        <a href="#" target="_blank" class="external-a">
+            <p class="external-text"></p>
+        </a>
+    </li>
+</template>
+
     <header>
         <div>
             <p></p>
@@ -123,6 +143,7 @@
                         </ul>
                     </div>
                 </section>
+
                 <section id="about" class="page">
                     <div class="title">
                         About
@@ -140,6 +161,7 @@
                         </ul>
                     </div>
                 </section>
+
                 <section id="profile" class="page">
                     <div class="title">
                         <a href="#about" class="title parent">About</a>
@@ -158,11 +180,29 @@
                         </ul>
                     </div>
                 </section>
+
                 <section id="career" class="page">
-                    
+                    <div class="title">
+                        <a href="#about" class="title parent">About</a>
+                        <div class="title" style="color: rgb(100, 100, 100); display: inline;">></div> Career
+                    </div>
+                    <div>
+                        <ul>
+                            <div class="content">
+                                <li id="career-title-content-container">
+                                    <!-- career-title のコンテンツが表示される -->
+                                </li>
+                            </div>
+                            <div id="career-description-content-container" class="description-on">
+                                <!-- career-description のコンテンツが表示される -->
+                            </div>
+                        </ul>
+                    </div>
                 </section>
+
                 <section id="tech" class="page">
                 </section>
+
                 <section id="portfolio" class="page">
                     <div class="title">
                         <p class="title">Portfolio</p>
@@ -173,6 +213,7 @@
                         </ul>
                     </div>
                 </section>
+
                 <section id="portfolio-detail" class="page">
                     <div class="title">
                         <a href="#portfolio" class="title parent">Portfolio</a>
@@ -182,51 +223,18 @@
                     <div>
                         <ul>
                             <div class="content">
-                                <li>
-                                    <div class="content-icon-text">
-                                        <div class="content-text">
-                                            <p class="content-title insert_title">{hoge}</p>
-                                            <p class="content-description insert_subtitle">{hoge}</p>
-                                        </div>
-                                    </div>
+                                <li id="portfolio-detail-title-content-container">
+                                    <!-- portfolio-detail-title のコンテンツが表示される -->
                                 </li>
                             </div>
-                            <div class="description-on">
-                                <div class="mini-content">
-                                    <p class="mini-content-title">技術スタック:</p>
-                                    <p class="mini-content-description insert_tech-stack">{hoge}</p>
-                                </div>
-                                <div class="mini-content">
-                                    <p class="mini-content-title">状態:</p>
-                                    <p class="mini-content-description insert_status">{hoge}</p>
-                                </div>
-                                <div class="mini-content">
-                                    <p class="mini-content-title">詳細:</p>
-                                    <p class="mini-content-description insert_details">{hoge}</p>
-                                </div>
+                            <div id="portfolio-detail-description-content-container" class="description-on">
+                                <!-- portfolio-detail-description のコンテンツが表示される -->
                             </div>
                         </ul>
                     </div>
                     <div class="external">
-                        <ul>
-                            <li class="external-li insert_github">
-                                <img src="./img/GitHub_Invertocat_Black.svg" alt="">
-                                <a href="#" target="_blank" class="insert_github">
-                                    <p>GitHubはこちら</p>
-                                </a>
-                            </li>
-                            <li class="external-li insert_qiita">
-                                <img src="./img/qiita-icon.svg" alt="">
-                                <a href="#" target="_blank" class="insert_qiita">
-                                    <p>Qiitaはこちら</p>
-                                </a>
-                            </li>
-                            <li class="external-li insert_external">
-                                <img src="./img/WEBpage.svg" alt="">
-                                <a href="#" target="_blank" class="insert_external">
-                                    <p>外部公開はこちら</p>
-                                </a>
-                            </li>
+                        <ul id="portfolio-detail-external-container">
+                            <!-- portfolio-detail-external のコンテンツが表示される -->
                         </ul>
                     </div>
                 </section>

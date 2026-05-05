@@ -8,34 +8,35 @@ const List1 = [
 ];
 const List2 = [
   {
-    title: "出身:",
-    description: "愛知県",
+    title: "2004年 12月:",
+    description: "誕生",
   },
   {
-    title: "趣味:",
-    description: "ギター，プログラミング，カフェ巡り，お散歩",
-  },
-  {
-    title: "ゲーム:",
-    description: "Apex，原神",
-  },
-  {
-    title: "自己紹介:",
+    title: "2021年  8月:",
     description:
-      "こんにちは！私はCoela[síːlə]です．\n中学生の頃に触れたロボットプログラミングからプログラミングを始めました．\n高校の頃までEV3を用いたロボットプログラミングに熱中していました．\n現在は静岡大学にて情報学の基礎を学びながらネットワークを主軸に研究をしています．",
+      "中部大学学長杯争奪LEGOロボットコンテスト2021エキスパート競技部門\n第三位 テセウスの舟",
   },
   {
-    title: "メインPC:",
-    description: "Intel Core i5-11400F | 16GB RAM | AMD Radeon RX 6500 XT",
+    title: "2023年  4月:",
+    description: "静岡大学 情報学部 情報科学科 入学",
   },
   {
-    title: "サブPC:",
-    description: "Intel Core i7-1260P | 16GB RAM | Intel Iris Xe Graphics",
+    title: "2024年  3月:",
+    description: "数理データサイエンス教育プログラム 認定",
+  },
+  {
+    title: "2025年  9月:",
+    description: "数理データサイエンスAI教育プログラム(応用基礎レベル) 認定",
+  },
+  {
+    title: "2026年  4月:",
+    description:
+      "AIスキル検定 初級 合格\n安全運転能力検定 4級 合格（オンライン）\n色彩士検定 4級 合格\n実用マナー検定 準3級 合格\n就活ガイド 3級 合格\nタイピング技能検定 e-typing master 8級 合格\n日本化粧品検定 3級 合格\nフェムテック境界認定資格 3級 合格\n化粧品成分検定 3級 合格",
   },
 ];
 
 function createTitle() {
-  const Container = document.getElementById("profile-title-content-container");
+  const Container = document.getElementById("career-title-content-container");
   const Template = document.getElementById("content-template-4");
 
   List1.forEach((data) => {
@@ -49,14 +50,15 @@ function createTitle() {
 
 function createDescription() {
   const Container = document.getElementById(
-    "profile-description-content-container",
+    "career-description-content-container",
   );
   const Template = document.getElementById("content-template-5");
 
   List2.forEach((data) => {
     const clone = Template.content.cloneNode(true);
     clone.querySelector(".mini-content-title").textContent = data.title;
-    clone.querySelector(".mini-content-description").textContent = data.description;
+    clone.querySelector(".mini-content-description").textContent =
+      data.description;
     Container.appendChild(clone);
   });
 }
