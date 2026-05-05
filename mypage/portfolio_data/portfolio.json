@@ -8,7 +8,8 @@
     "description": "大学ポータルサイトとして利用されているLiveCampusU向けの拡張機能です．\n各種ログインの自動化を主機能として持ち，ダークモードの提供も行っています．一部対応外の要素もありますが順次対応しています．",
     "github": "https://github.com/sauhits/zenjo_clicker",
     "qiita": "https://qiita.com/sauhits/items/fa94cf686d59cc01c7b0",
-    "out": null
+    "out": null,
+    "img": "../img/io/zenjo.png"
   },
   {
     "id": 1,
@@ -18,9 +19,9 @@
     "status": "運用終了",
     "description": "2025年度静岡大学情報学部情報科学科 研究室配属システムの新規開発を行いました．結果としては学務より採用され，対象学生全員の配属を担当し，完了することができました．\n\nchrome拡張機能として実装しました．これによって歴代システムでは不可能であった個人ページからの成績スクレイピングを可能にしました．\n\nユーザ：学科学生96名\n開発期間：1ヶ月\n開発体制：1名\n",
     "github": "https://github.com/sauhits/lab_entry_system",
-    "qiita": "https://qiita.com/sauhits/items/a9a9a6802d124be8bde2",
+    "qiita": null,
     "out": null,
-    "img": "../img/io_haizoku.png"
+    "img": "../img/io/haizoku.png"
   },
   {
     "id": 2,
@@ -32,7 +33,7 @@
     "github": "https://github.com/sauhits/never_bash",
     "qiita": null,
     "out": null,
-    "img": "../img/io_neverbash.png"
+    "img": "../img/io/neverbash.png"
   },
   {
     "id": 3,
@@ -54,7 +55,8 @@
     "description": "指定した年,月を元に月カレンダーを作成し，予定を書き込んで画像として返すAPIです．\n予定はJSON形式で渡すことができます．",
     "github": "https://github.com/sauhits/makeCalender",
     "qiita": null,
-    "out": null
+    "out": null,
+    "img": "../img/io/calender.png"
   },
   {
     "id": 5,
@@ -65,7 +67,8 @@
     "description": "LINEを通じて予定の管理をするシステムです．CloudRun上でFastAPIによるAPIを構築し，Firestoreにてリマインドの管理をしています．\n最大で30秒の誤差を持ちますが，200通/月までサービスを提供します．",
     "github": "https://github.com/sauhits/remind-er",
     "qiita": "https://qiita.com/sauhits/items/e7c421b828de397b54d5",
-    "out": null
+    "out": null,
+    "img": "../img/io/line.png"
   },
   {
     "id": 6,
@@ -76,7 +79,8 @@
     "description": "所属研究室の連絡用DiscordサーバのBotです．",
     "github": null,
     "qiita": null,
-    "out": null
+    "out": null,
+    "img": "../img/io/discordbot.png"
   },
   {
     "id": 7,
