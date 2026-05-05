@@ -1,6 +1,6 @@
 [
   {
-    "id": 0,
+    "id": 8,
     "title": "zenjo",
     "subtitle": "大学ポータルサイト向けのweb拡張機能",
     "tech": "JavaScript,HTML,CSS,GitHub",
@@ -16,10 +16,11 @@
     "subtitle": "2025年度静岡大学情報学部情報科学科 研究室配属システムの新規開発・運用",
     "tech": "Node.js,GCP Firebase/Firestore(NoSQL),GitHub/Actions",
     "status": "運用終了",
-    "description": "2025年度静岡大学情報学部情報科学科 研究室配属システムの新規開発を行いました．結果としては学務より採用され，対象学生全員の配属を担当し，完了することができました．\n\nchrome拡張機能を用いたクライアントサーバシステムとして実装しました．これによって歴代システムでは不可能であった個人ページからの成績スクレイピングを可能にしました．\n\nユーザ：学科学生96名\n開発期間：1ヶ月\n開発体制：1名\n",
+    "description": "2025年度静岡大学情報学部情報科学科 研究室配属システムの新規開発を行いました．結果としては学務より採用され，対象学生全員の配属を担当し，完了することができました．\n\nchrome拡張機能として実装しました．これによって歴代システムでは不可能であった個人ページからの成績スクレイピングを可能にしました．\n\nユーザ：学科学生96名\n開発期間：1ヶ月\n開発体制：1名\n",
     "github": "https://github.com/sauhits/lab_entry_system",
     "qiita": "https://qiita.com/sauhits/items/a9a9a6802d124be8bde2",
-    "out": null
+    "out": null,
+    "img": "../img/io_haizoku.png"
   },
   {
     "id": 2,
@@ -30,7 +31,8 @@
     "description": "ターミナルでのタイプミスは日常茶飯事です．タイプミスをしたコマンド名でもそれらしいものができることがありますよね．このスクリプトではタイプミスの結果，生まれた架空のコマンドについてまとめたサイトを生成します．",
     "github": "https://github.com/sauhits/never_bash",
     "qiita": null,
-    "out": null
+    "out": null,
+    "img": "../img/io_neverbash.png"
   },
   {
     "id": 3,

@@ -26,18 +26,18 @@ const List = [
   //   description: "SEP-3を対象としたC言語コンパイラ",
   // },
   {
-    toLink: "#portfolio-detail/4",
+    toLink: "#portfolio-detail/8",
     title: "Zenjo",
     description: "大学ポータルサイトを対象とした便利拡張機能",
   },
   {
-    toLink: "#portfolio-detail/4",
+    toLink: "#portfolio-detail/3",
     title: "二者対話の発話を対象としたBERTによる話題抽出と話題遷移の検出",
     description:
       "二者対話の発話ログを用いて話題の抽出と話題遷移の検知を目指した",
   },
   {
-    toLink: "#portfolio-detail/4",
+    toLink: "#portfolio-detail/2",
     title: "Never Bash",
     description: "CLIにおけるタイプミスを解説する架空まとめサイトを生成する",
   },

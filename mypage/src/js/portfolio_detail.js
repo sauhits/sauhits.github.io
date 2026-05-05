@@ -4,6 +4,7 @@ const List1 = [
   { title: "技術スタック:", class: "insert_tech-stack" },
   { title: "状態:", class: "insert_status" },
   { title: "詳細:", class: "insert_details" },
+  { title: "概略: ", class: "insert_img" },
 ];
 
 const externalLinksConfig = [
@@ -59,7 +60,6 @@ function createDescription() {
 }
 
 function createExternalLinks(data) {
-  console.log("Creating external links with data:", data);
   const container = document.getElementById(
     "portfolio-detail-external-container",
   );
@@ -73,20 +73,14 @@ function createExternalLinks(data) {
   container.innerHTML = "";
 
   externalLinksConfig.forEach((config) => {
-    console.log("Checking for key:", config.key, "in data:", data);
     if (data[config.key]) {
       const clone = template.content.cloneNode(true);
-
       clone.querySelector("li").classList.add(config.className);
       clone.querySelector(".external-img").src = config.img;
-
       const aTag = clone.querySelector(".external-a");
       aTag.href = data[config.key];
-      console.log("setting: ", data[config.key]);
       aTag.classList.add(config.className);
-
       clone.querySelector(".external-text").textContent = config.text;
-
       container.appendChild(clone);
     }
   });
@@ -103,7 +97,6 @@ function loadPortfolioDetail() {
       console.error("URLから有効なidが取得できませんでした");
       return;
     }
-    console.log("Fetching data for id:", targetId);
 
     fetch(jsonFilePath)
       .then((response) => {
@@ -147,6 +140,25 @@ function renderPage(data) {
 
   const insertDetails = document.getElementsByClassName("insert_details");
   if (insertDetails.length > 0) insertDetails[0].textContent = data.description;
+
+  const insertImgs = document.getElementsByClassName("insert_img");
+  console.log("insertImgs:", insertImgs);
+  if (insertImgs.length > 0) {
+    console.log("data.img:", data.img);
+    if (data.img) {
+      const imgElement = document.createElement("img");
+      imgElement.src = data.img;
+      imgElement.alt = "概略画像";
+      imgElement.classList.add("portfolio-summary-img");
+
+      insertImgs[0].appendChild(imgElement);
+    } else {
+      const parentContainer = insertImgs[0].closest(".mini-content");
+      if (parentContainer) {
+        parentContainer.style.display = "none";
+      }
+    }
+  }
 }
 
 window.addEventListener("DOMContentLoaded", loadPortfolioDetail);
