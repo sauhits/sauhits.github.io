@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" version="29.6.1">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0">
   <diagram id="1_UXSHEWWK7ZHlFE1pL7" name="ページ1">
-    <mxGraphModel dx="638" dy="359" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0" adaptiveColors="simple">
+    <mxGraphModel dx="1107" dy="672" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0" adaptiveColors="simple">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -74,6 +74,9 @@
         </mxCell>
         <mxCell id="g8YLZqoP6hqzFIW0CtKa-50" parent="1" style="shape=image;imageAspect=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;image=https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg;" value="" vertex="1">
           <mxGeometry height="30" width="30" x="420" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="pAyRhcu19o8BpJ9YoGWf-47" parent="1" style="swimlane;startSize=0;" value="" vertex="1">
+          <mxGeometry height="300" width="590" x="110" y="170" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

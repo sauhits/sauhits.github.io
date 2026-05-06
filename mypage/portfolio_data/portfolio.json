@@ -9,7 +9,7 @@
     "github": "https://github.com/sauhits/zenjo_clicker",
     "qiita": "https://qiita.com/sauhits/items/fa94cf686d59cc01c7b0",
     "out": null,
-    "img": "../img/io/zenjo.png"
+    "img": "../img/io/zenjo.svg"
   },
   {
     "id": 1,
@@ -21,7 +21,7 @@
     "github": "https://github.com/sauhits/lab_entry_system",
     "qiita": null,
     "out": null,
-    "img": "../img/io/haizoku.png"
+    "img": "../img/io/haizoku.svg"
   },
   {
     "id": 2,
@@ -33,7 +33,7 @@
     "github": "https://github.com/sauhits/never_bash",
     "qiita": null,
     "out": null,
-    "img": "../img/io/neverbash.png"
+    "img": "../img/io/neverbash.svg"
   },
   {
     "id": 3,
@@ -56,7 +56,7 @@
     "github": "https://github.com/sauhits/makeCalender",
     "qiita": null,
     "out": null,
-    "img": "../img/io/calender.png"
+    "img": "../img/io/calender.svg"
   },
   {
     "id": 5,
@@ -68,7 +68,7 @@
     "github": "https://github.com/sauhits/remind-er",
     "qiita": "https://qiita.com/sauhits/items/e7c421b828de397b54d5",
     "out": null,
-    "img": "../img/io/line.png"
+    "img": "../img/io/line.svg"
   },
   {
     "id": 6,
@@ -80,7 +80,7 @@
     "github": null,
     "qiita": null,
     "out": null,
-    "img": "../img/io/discordbot.png"
+    "img": "../img/io/discordbot.svg"
   },
   {
     "id": 7,

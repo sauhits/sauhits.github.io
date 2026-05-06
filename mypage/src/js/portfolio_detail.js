@@ -146,12 +146,12 @@ function renderPage(data) {
   if (insertImgs.length > 0) {
     console.log("data.img:", data.img);
     if (data.img) {
-      const imgElement = document.createElement("img");
-      imgElement.src = data.img;
-      imgElement.alt = "概略画像";
-      imgElement.classList.add("portfolio-summary-img");
-
-      insertImgs[0].appendChild(imgElement);
+      const objectElement = document.createElement("object");
+      objectElement.data = data.img;
+      objectElement.type = "image/svg+xml";
+      objectElement.classList.add("portfolio-summary-img");
+      objectElement.textContent = "概略画像";
+      insertImgs[0].appendChild(objectElement);
     } else {
       const parentContainer = insertImgs[0].closest(".mini-content");
       if (parentContainer) {
