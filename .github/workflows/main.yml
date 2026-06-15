@@ -1,0 +1,92 @@
+name: Generate Short URL Page
+
+on:
+  repository_dispatch:
+    types: [create-shortcut]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create JSON Data and HTML Directory
+        env:
+          SHORT_ID: ${{ github.event.client_payload.id }}
+          TARGET_URL: ${{ github.event.client_payload.url }}
+        run: |
+          # タイムスタンプの取得 (UNIX時間)
+          TIMESTAMP=$(date +%s)
+
+          # 1. l/db/ フォルダ以下に管理用のJSONを作成（または上書き）
+          mkdir -p l/db
+          echo "{\"url\": \"$TARGET_URL\", \"updated_at\": $TIMESTAMP}" > "l/db/${SHORT_ID}.json"
+
+          # 2. l/ の配下に短縮URLの着地点となる dir と index.html を作成
+          mkdir -p "l/${SHORT_ID}"
+          
+          # おもしろフェイク画面（ターミナル風／ブルスク）のHTMLを流し込む
+          cat << 'EOF' > "l/${SHORT_ID}/index.html"
+          <!DOCTYPE html>
+          <html lang="ja">
+          <head>
+              <meta charset="UTF-8">
+              <title>System Error?</title>
+              <style>
+                  body { background-color: #000; color: #0f0; font-family: monospace; padding: 20px; font-size: 16px; }
+                  .cursor { animation: blink 1s infinite; }
+                  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+              </style>
+          </head>
+          <body>
+              <div id="terminal"></div>
+              <script>
+                  // Cloud Runから渡された転送先URLをここに埋め込む（Actionsが置換）
+                  const targetUrl = "TARGET_URL_PLACEHOLDER";
+                  
+                  const lines = [
+                      "Connecting to secure server...",
+                      "Access granted.",
+                      "Downloading payload...",
+                      "CRITICAL_ERROR: Redirecting to safe zone..."
+                  ];
+                  let lineIdx = 0;
+                  
+                  function type() {
+                      if (lineIdx < lines.length) {
+                          document.getElementById("terminal").innerHTML += lines[lineIdx] + "<br>";
+                          lineIdx++;
+                          setTimeout(type, 400); // 演出のために少しずらす
+                      } else {
+                          // 演出が終わったら本物のURLへリダイレクト
+                          setTimeout(() => { window.location.href = targetUrl; }, 500);
+                      }
+                  }
+                  type();
+              </script>
+          </body>
+          </html>
+          EOF
+
+          # HTML内のプレースホルダーを実際のURLに置換
+          sed -i "s|TARGET_URL_PLACEHOLDER|$TARGET_URL|g" "l/${SHORT_ID}/index.html"
+
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # l/ フォルダ以下の変更をステージング
+          git add l/
+          
+          # 変更がある場合のみコミットしてプッシュ
+          if ! git diff --cached --quiet; then
+            git commit -m "Automated update: Added/Updated short URL [l/${{ github.event.client_payload.id }}]"
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
