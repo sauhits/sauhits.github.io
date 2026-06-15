@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>System Error?</title>
+    <style>
+        body { background-color: #000; color: #0f0; font-family: monospace; padding: 20px; font-size: 16px; }
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+    <div id="terminal"></div>
+    <script>
+        // Cloud Runから渡された転送先URLをここに埋め込む（Actionsが置換）
+        const targetUrl = "https://example.com";
+        
+        const lines = [
+            "Connecting to secure server...",
+            "Access granted.",
+            "Downloading payload...",
+            "CRITICAL_ERROR: Redirecting to safe zone..."
+        ];
+        let lineIdx = 0;
+        
+        function type() {
+            if (lineIdx < lines.length) {
+                document.getElementById("terminal").innerHTML += lines[lineIdx] + "<br>";
+                lineIdx++;
+                setTimeout(type, 400); // 演出のために少しずらす
+            } else {
+                // 演出が終わったら本物のURLへリダイレクト
+                setTimeout(() => { window.location.href = targetUrl; }, 500);
+            }
+        }
+        type();
+    </script>
+</body>
+</html>
