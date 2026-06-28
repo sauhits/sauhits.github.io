@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Courier+Prime:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="stream-container"></div>
+
+    <div class="container">
+        <h1>短縮URL作成</h1>
+
+        <div class="input-group">
+            <input type="url" id="targetUrl" placeholder="https://example.com" required>
+        </div>
+
+        <button id="submitBtn">登録する</button>
+
+        <div id="resultArea" class="result"></div>
+
+        <div class="image-area">
+            <img src="./Shakespeare.svg" alt="Featured Image">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
